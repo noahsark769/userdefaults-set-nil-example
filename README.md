@@ -24,10 +24,10 @@ if let data = UserDefaults.standard.data(forKey: "myKey") {
 ```
 {
     "$archiver" = NSKeyedArchiver;
-    "$objects" =     (
+    "$objects" = (
         "$null"
     );
-    "$top" =     {
+    "$top" = {
         root = "<CFKeyedArchiverUID 0x7887b620 [0xe926e8]>{value = 0}";
     };
     "$version" = 100000;
