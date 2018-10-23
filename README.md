@@ -1,5 +1,5 @@
 # userdefaults-set-nil-example
-Example demonstrating the behavior of UserDefaults.set(nil, forKey:) in iOS 10.
+Example demonstrating the behavior of `UserDefaults.standard.set(nil, forKey:)` in iOS 10.
 
 The behavior of `UserDefaults.standard.set(nil, forKey: "myKey")` differs between iOS 10 and iOS 11.
 
@@ -35,3 +35,5 @@ if let data = UserDefaults.standard.data(forKey: "myKey") {
 ```
 
 This repo contains an example app project which demonstrates this behavior. To demonstrate, build and run the project on iOS 10 and 11 simulators and verify that the printed output is different.
+
+If you want consistent behavior, use `removeObject(forKey:)` instead.
