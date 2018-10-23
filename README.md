@@ -5,7 +5,7 @@ The behavior of `UserDefaults.standard.set(nil, forKey: "myKey")` differs betwee
 
 In iOS 11 onward, the following code returns nil:
 
-```
+```swift
 // iOS 11+
 UserDefaults.standard.set(nil, forKey: "myKey")
 print(UserDefaults.standard.data(forKey: "myKey")) // nil
@@ -13,7 +13,7 @@ print(UserDefaults.standard.data(forKey: "myKey")) // nil
 
 However, in iOS 10, the same code produces an encoded plist:
 
-```
+```swift
 // iOS 10
 UserDefaults.standard.set(nil, forKey: "myKey")
 if let data = UserDefaults.standard.data(forKey: "myKey") {
