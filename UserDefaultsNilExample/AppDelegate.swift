@@ -16,6 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
+        UserDefaults.standard.set(nil, forKey: "myKey")
+        if let data = UserDefaults.standard.data(forKey: "myKey") {
+            let propertyList = try! PropertyListSerialization.propertyList(from: data, options: [], format: nil)
+            print("data(forKey: \"myKey\") returned a property list")
+            print(propertyList)
+        } else {
+            print("data(forKey: \"myKey\") returned nil")
+        }
+
         return true
     }
 
